@@ -1,0 +1,26 @@
+{
+  "name": "entrevista",
+  "version": "1.0.0",
+  "description": "Teste front-end",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thiago Vieland",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-jshint": "^2.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp4-run-sequence": "^0.3.2",
+    "jshint": "^2.10.2",
+    "jshint-stylish": "^2.2.1"
+  }
+}

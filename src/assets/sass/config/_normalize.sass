@@ -1,0 +1,114 @@
+/*----------------------------------
+
+  RESET
+
+  ----------------------------------*/
+
+*, *:before, *::after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  outline: none
+
+html
+  height: 100%
+  font-size: 62.5%
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  height: 100%
+  margin: 0
+  padding: 0
+  font-family: $main-font
+  color: $text-color
+  background-color: #fff
+
+img
+  max-width: 100%
+  border: none
+
+a
+  text-decoration: none
+
+ul, li
+  margin: 0
+  padding: 0
+
+li
+  list-style: none
+
+h1, h2, h3, h4
+  color: $text-dark
+
+.fa, .fa-b
+  font-size: inherit
+  font-style: normal
+  text-rendering: auto
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+.fa
+  font-family: $font-icon
+
+.fa-b
+  font-family: $font-brand
+  font-weight: 400
+
+.hv-op:hover
+  opacity: 0.8
+
+/*----------------------------------
+  HIDDEN
+  ----------------------------------*/
+.hidden-df
+  @media screen and (min-width: 961px)
+    display: none !important
+.hidden-md
+  @media screen and (max-width: 960px)
+    display: none !important
+.hidden-mb
+  @media screen and (max-width: 768px)
+    display: none !important
+.show-mb
+  @media screen and (min-width: 769px)
+    display: none !important
+
+/*----------------------------------
+  DEFAULT
+  ----------------------------------*/
+.main-content, section
+  float: left
+  width: 100%
+  margin: 0
+  padding: 0
+
+.container
+  display: block
+  width: 100%
+  max-width: $max-size
+  margin: 0 auto
+  padding: 0 10px
+  @extend %clearfix
+
+.row
+  display: block
+  width: auto
+  margin: 0 -10px
+
+[class*="col-"]
+  float: left
+  padding: 0 10px
+
+/*----------------------------------
+  COL AND VIEW PORT SIZES
+  ----------------------------------*/
+@each $prefix, $size-value, $column-number, $pos in $sizes
+	@if ($pos == last)
+		@for $aux from 1 through $column-number
+			.#{$prefix}-col-#{$aux}
+				width: 100%/$column-number*$aux
+	@else
+		@media screen and (max-width: $size-value)
+			@for $aux from 1 through $column-number
+				.#{$prefix}-col-#{$aux}
+					width: 100%/$column-number*$aux

@@ -1,0 +1,26 @@
+/*----------------------------------
+
+  MIXINS / EXTEND
+
+  ----------------------------------*/
+
+/*----------------------------------
+  CLEARFIX
+  ----------------------------------*/
+%clearfix
+  *zoom: 1
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+/*----------------------------------
+  PREFIX
+  ----------------------------------*/
+@mixin prefix($var1, $var2)
+  -webkit-#{$var1}: $var2
+  -moz-#{$var1}: $var2
+  -ms-#{$var1}: $var2
+  -o-#{$var1}: $var2
+  $var1: $var2
